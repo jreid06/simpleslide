@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS ONLY SLIDER</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h2>SIMPLE HTML, CSS & VANILLA JS SLIDER</h2>
+        </div>
+
+        <div class="slider-box">
+            <div class="slide active" id="slide1">
+                <img src="image2.jpeg" alt="">
+            </div>
+            <div class="slide" id="slide2">
+                <img src="aniket-deole-VG5zcMz5F24.jpg" alt="">
+            </div>
+            <div class="slide" id="slide3">
+                <img src="alexander-slattery-LI748t0BK8w.jpg" alt="">
+            </div>
+            <div class="slide" id="slide4">
+                <img src="image1.jpeg" alt="">
+            </div>
+        </div>
+
+        <div class="slider-ctrls">
+            <a href="#slide1" class="active">
+                <div class="slide-dot slide-dot-active"></div>
+            </a>
+            <a href="#slide2">
+                <div class="slide-dot"></div>
+            </a>
+            <a href="#slide3">
+                <div class="slide-dot"></div>
+            </a>
+            <a href="#slide4">
+                <div class="slide-dot"></div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+
+        function controlSlide(slide_ctrl) {
+            if (slide_ctrl.classList.length < 1) {
+                // remove class from old active slide
+                for (var k = 0; k < slideControl.length; k++) {
+
+                    if (slideControl[k].classList.length >= 1 && slideControl[k].classList[0] === 'active') {
+
+                        slideControl[k].children[0].classList.remove('slide-dot-active');
+                        slideControl[k].classList.remove('active')
+                    }
+                }
+
+                // add class to clicked slide
+
+                slide_ctrl.classList.add('active')
+                slide_ctrl.children[0].classList.add('slide-dot-active');
+            }
+
+        }
+
+
+        let slideControl = document.querySelectorAll('.slider-ctrls a');
+
+        // add click event to slide controls
+        for (var i = 0; i < slideControl.length; i++) {
+            slideControl[i].addEventListener('click', function(e) {
+
+                let slide_ctrl = e.target;
+
+                controlSlide(slide_ctrl);
+
+            })
+        }
+
+        function positionDot(slideControl) {
+            let hash = window.location.hash;
+
+            if (hash) {
+                for (var i = 0; i < slideControl.length; i++) {
+
+                    if (slideControl[i].classList[0] === 'active' && slideControl[i].attributes['href'].value !== hash) {
+                        slideControl[i].classList.remove('active');
+                        slideControl[i].children[0].classList.remove('slide-dot-active');
+                    }else if (slideControl[i].attributes['href'].value === hash) {
+                        slideControl[i].classList.add('active');
+                        slideControl[i].children[0].classList.add('slide-dot-active');
+                    }
+                }
+            }
+
+        }
+
+        positionDot(slideControl);
+
+
+    </script>
+
+</body>
+
+</html>

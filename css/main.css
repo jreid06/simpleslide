@@ -1,0 +1,93 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 98%; }
+
+body {
+  height: 100%;
+  background-color: #f2f2f2;
+  font-family: 'Lato', sans-serif; }
+
+.container {
+  width: 100%;
+  height: 98%;
+  padding-top: 70px; }
+
+.header {
+  text-align: center;
+  padding: 20px;
+  font-weight: 300; }
+
+.slider-box {
+  width: 40%;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  -webkit-box-shadow: 0 0 15px #d2d2d2;
+  box-shadow: 0 0 15px #d2d2d2;
+  background-color: #222;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-scroll-snap-points-x: repeat(300px);
+  -ms-scroll-snap-points-x: repeat(300px);
+  scroll-snap-points-x: repeat(100%);
+  -webkit-scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
+  -webkit-scroll-snap-destination: 0% 100%;
+  -ms-scroll-snap-destination: 0% 100%;
+  scroll-snap-destination: 0% 40%; }
+  .slider-box .slide {
+    width: 100%;
+    height: 100%;
+    display: inline-block; }
+    .slider-box .slide img {
+      width: 100%;
+      height: 100%; }
+
+.slider-ctrls {
+  width: 9%;
+  margin: auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .slider-ctrls a {
+    background-color: #e8e8e8;
+    height: 20px;
+    border-radius: 10px;
+    width: 25%;
+    position: relative;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    margin-left: 11px; }
+    .slider-ctrls a:active {
+      background-color: purple; }
+    .slider-ctrls a:focus {
+      background-color: orange; }
+  .slider-ctrls .slide-dot {
+    background-color: darkgoldenrod;
+    position: absolute;
+    height: 11.2px;
+    width: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    top: 4.5px;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  .slider-ctrls .slide-dot-active {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+
+/*# sourceMappingURL=main.css.map */
